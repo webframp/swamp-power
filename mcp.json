@@ -2,7 +2,7 @@
   "mcpServers": {
     "swamp": {
       "command": "deno",
-      "args": ["run", "--allow-run=swamp", "--allow-read", "--allow-env", "jsr:@webframp/swamp-mcp-server"],
+      "args": ["run", "--allow-run=swamp", "--allow-read", "--allow-env", "https://raw.githubusercontent.com/webframp/swamp-mcp-server/v0.1.0/src/main.ts"],
       "env": {},
       "disabled": false
     }

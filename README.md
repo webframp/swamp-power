@@ -2,28 +2,38 @@
 
 A [Kiro Power](https://kiro.dev/docs/powers/) for [swamp](https://github.com/systeminit/swamp) — AI-native automation with typed models, versioned data, and workflow orchestration.
 
+## What This Does
+
+This is a **Knowledge Base Power** that provides keyword-triggered
+discoverability for swamp within Kiro. When you mention "swamp", "model",
+"workflow", or related keywords, Kiro activates this power and loads the
+`swamp` skill for authoritative operational guidance.
+
+The power is intentionally thin. It exists to bridge Kiro's power activation
+system to the swamp skill, which is maintained in sync with the swamp CLI by
+the upstream developers.
+
 ## Installation
 
 In Kiro IDE: **Powers panel → Add power from GitHub** → `webframp/swamp-power`
 
 ## What's Included
 
-- **POWER.md** — Activation keywords, onboarding steps, and rules
-- **mcp.json** — MCP server configuration (spawns [swamp-mcp-server](https://github.com/webframp/swamp-mcp-server))
-- **steering/** — Workflow-specific guidance loaded on demand:
-  - `model-operations.md` — Model CRUD, methods, factory patterns
-  - `extension-development.md` — Building custom TypeScript extensions
-  - `data-and-cel.md` — CEL queries and data lifecycle
-  - `workflow-orchestration.md` — DAG design and parallel execution
+- **POWER.md** — Activation keywords, onboarding steps, and a directive to load the swamp skill
 
 ## Requirements
 
 - [swamp](https://github.com/systeminit/swamp) CLI installed
-- [Deno](https://deno.land/) >= 2.0 (for the MCP server)
+- The `swamp` skill installed at `~/.kiro/skills/swamp/`
 
 ## How It Works
 
-When you mention "swamp", "model", "workflow", or related keywords in Kiro, this power activates — loading the MCP server tools and relevant steering into context. When you move to a different task, it deactivates.
+1. You mention a swamp-related keyword in Kiro
+2. This power activates, loading POWER.md into context
+3. POWER.md instructs the agent to activate the `swamp` skill via `disclose_context`
+4. The skill provides all operational guidance (commands, rules, guardrails, deep references)
+
+The skill is the source of truth. This power is a discoverability layer.
 
 ## License
 

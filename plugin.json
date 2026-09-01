@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "swamp",
+  "version": "1.0.0",
+  "description": "Force-loads the global swamp skill so Kiro always has authoritative swamp CLI guidance — models, workflows, data, CEL, vaults, extensions, and reports — without the operator repeating themselves.",
+  "author": {
+    "name": "webframp"
+  },
+  "homepage": "https://github.com/systeminit/swamp",
+  "repository": "https://github.com/webframp/swamp-power",
+  "license": "MIT",
+  "keywords": [
+    "swamp",
+    "model",
+    "workflow",
+    "automation",
+    "infrastructure",
+    "CEL",
+    "extension",
+    "typed data",
+    "observation",
+    "adopt",
+    "swamp model",
+    "swamp workflow",
+    "swamp data",
+    "swamp vault",
+    "swamp extension",
+    "swamp report",
+    "swamp serve"
+  ]
+}
